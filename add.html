@@ -1,0 +1,26 @@
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+<body>
+  <!--<a href="intent://www.baidu.com?a#Intent;scheme=http;package=com.android.browser;end";>回到支付页</a>-->
+  <div>充值成功可手动返回页面</div>
+	<script>
+    function getUrlParam(name){
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r!=null) return unescape(r[2]); return null;
+    }
+            if (/AlipayClient/.test(window.navigator.userAgent)){
+    let merchant=getUrlParam("merchant")?getUrlParam("merchant"):''
+    let money=getUrlParam("money")?getUrlParam("money"):''
+    let remark=getUrlParam("remark")?getUrlParam("remark"):''
+//  window.location.href = 'alipays://platformapi/startapp?appId=20000123&return_url="https://www.baidu.com/"&actionType=scan&'+
+//  'biz_data={"s": "money", "u": "'+merchant+'", "a": "'+money+'", "m": "'+remark+'"}';
+    window.location.href = 'alipays://platformapi/startapp?appId=09999988&actionType=toAccount&goBack=Yes&amount='+money+'&userId='+merchant+'&memo='+remark  
+    }
+            
+</script>
+</body>
+</html>
