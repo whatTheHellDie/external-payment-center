@@ -20,7 +20,7 @@
     "compression-webpack-plugin": "1.1.11",
     "es6-promise": "^4.2.6",
     "jsencrypt": "^3.0.0-rc.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "node-sass": "^4.11.0",
     "qrcode": "^1.3.3",
     "sass-loader": "^7.1.0",
